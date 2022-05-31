@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="">
+    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CoffeeMachina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeMachina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeRecipe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +73,16 @@
       <updated>1653922548340</updated>
       <workItem from="1653922550280" duration="203000" />
       <workItem from="1653979574818" duration="433000" />
-      <workItem from="1653980231773" duration="626000" />
+      <workItem from="1653980231773" duration="5070000" />
     </task>
+    <task id="LOCAL-00001" summary="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)">
+      <created>1653980955678</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653980955678</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,5 +110,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)" />
   </component>
 </project>
