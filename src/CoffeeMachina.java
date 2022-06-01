@@ -4,6 +4,7 @@ import java.util.Scanner;
     public class CoffeeMachina{
         public static ArrayList<String> user = new ArrayList<>();
         public static ArrayList<Integer> drink = new ArrayList<>();
+        public static ArrayList<Integer> numberDrink = new ArrayList<>();
         static Scanner in = new Scanner(System.in);
 
         private static Integer menu;
@@ -33,6 +34,7 @@ import java.util.Scanner;
 
         public static void setUserName(String name){ user.add(name);}
         public static void setDrink(Integer name){drink.add(name);}
+        public static void setNumberDrink (Integer in){numberDrink.add(in);}
 
         public static Integer getSelectionCoffee() {
             return selectionCoffee;
@@ -193,19 +195,32 @@ import java.util.Scanner;
         }
 
         public static void GetUser(){
-            for(int i = 1; i < user.size(); i++){
-                System.out.println(i + " - " + user.get(i));
-            }
-            System.out.println("Вы кто?");
-            setMenu(in.nextInt());
-            for(int i = 0; i < user.size(); i++){
-                if (user.indexOf(user.get(i)) == getMenu()) {
-                    if(drink.get(i) == 1){
-                        MakeEspresso();
-                    }else if(drink.get(i) == 2) {
-                        MakeCappuccino();
+            if (user.size() != 0) {
+                for (int i = 0; i < user.size(); i++) {
+                    System.out.println(i + " - " + user.get(i));
+                }
+                System.out.println("Вы кто?");
+                setMenu(in.nextInt());
+                for (int i = 0; i < user.size(); i++) {
+                    if (user.indexOf(user.get(i)) == getMenu()) {
+                        if (drink.get(i) == 1) {
+                            int j = 0;
+                            while (j < numberDrink.get(i)) {
+                                MakeEspresso();
+                                j++;
+                            }
+                        } else if (drink.get(i) == 2) {
+                            int j = 0;
+                            while (j < numberDrink.get(i)) {
+                                MakeCappuccino();
+                                j++;
+                            }
+                        }
                     }
                 }
+            } else {
+                System.out.println("!!! Пользователи отсутствуют !!! \n");
+                switchActionsCrawlers();
             }
 
         }
@@ -214,6 +229,8 @@ import java.util.Scanner;
             setUserName(in.next());
             System.out.print("Выберите напиток: \n" + "Кнопка 1 - ESPRESSO \n" + "Кнопка 2 - CAPPUCCINO \n");
             setDrink(in.nextInt());
+            System.out.print("Укажите колличество напитков: ");
+            setNumberDrink(in.nextInt());
         }
 
 

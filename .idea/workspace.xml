@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Реализовал возможность логирования работы кофемашины">
+    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Готова часть добавления пользователей">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CoffeeMachina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeMachina.java" afterDir="false" />
     </list>
@@ -74,7 +74,7 @@
       <workItem from="1653922550280" duration="203000" />
       <workItem from="1653979574818" duration="433000" />
       <workItem from="1653980231773" duration="5854000" />
-      <workItem from="1654064345783" duration="13113000" />
+      <workItem from="1654064345783" duration="16663000" />
     </task>
     <task id="LOCAL-00001" summary="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)">
       <created>1653980955678</created>
@@ -104,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654075539014</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Готова часть добавления пользователей">
+      <created>1654089649282</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654089649282</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +145,7 @@
     <MESSAGE value="Добавил функционал выбора колличества порций напитков" />
     <MESSAGE value="Добавил вывод рецепта напитка" />
     <MESSAGE value="Реализовал возможность логирования работы кофемашины" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовал возможность логирования работы кофемашины" />
+    <MESSAGE value="Готова часть добавления пользователей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Готова часть добавления пользователей" />
   </component>
 </project>
