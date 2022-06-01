@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)">
+    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Добавил функционал выбора колличества порций напитков">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CoffeeMachina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeMachina.java" afterDir="false" />
     </list>
@@ -73,7 +73,8 @@
       <updated>1653922548340</updated>
       <workItem from="1653922550280" duration="203000" />
       <workItem from="1653979574818" duration="433000" />
-      <workItem from="1653980231773" duration="5070000" />
+      <workItem from="1653980231773" duration="5854000" />
+      <workItem from="1654064345783" duration="2419000" />
     </task>
     <task id="LOCAL-00001" summary="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)">
       <created>1653980955678</created>
@@ -82,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653980955678</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавил функционал выбора колличества порций напитков">
+      <created>1654008326078</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654008326078</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)" />
+    <MESSAGE value="Добавил функционал выбора колличества порций напитков" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил функционал выбора колличества порций напитков" />
   </component>
 </project>

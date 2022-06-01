@@ -5,12 +5,10 @@ import java.util.Scanner;
 
         private static Integer menu;
         private static Integer selectionCoffee; // селектор выбора кофе
-
         private static Integer water = 400; //остаток воды
         private static Integer coffee = 400; // остаток кофе
         private static Integer milk = 400; // остаток молока
         private static Integer clean = 10; // загрязнение
-
         private static Integer numMugs = 0; // колличество кружек кофе
 
         // объекты для рецептов
@@ -97,7 +95,7 @@ import java.util.Scanner;
             CONTAINER,
             MAKE_COFFEE,
             USERS,
-            HISTORY,
+            HISTORY
         }
 
         public enum Machine_Container {
@@ -115,8 +113,8 @@ import java.util.Scanner;
         public enum Number_Servings{
             ONE_SERVING,
             THREE_SERVINGS,
-            NUMBER_SERVINGS
-
+            NUMBER_SERVINGS,
+            RECIPE
         }
 
         public static void Error(){
@@ -225,6 +223,19 @@ import java.util.Scanner;
 
         //методы
 
+        public static void RecipeEspresso(){
+            System.out.println( "!!! Рецепт приготовления экспрессо !!!" );
+            System.out.println(recipeEspresso.water + "мл. " + "воды;");
+            System.out.println(recipeEspresso.coffee + "г. " + "кофе." + "\n");
+        }
+
+        public static void RecipeCappuccino(){
+            System.out.println( "!!! Рецепт приготовления экспрессо !!!" );
+            System.out.println(recipeCapppuccino.water + "мл. " + "воды;");
+            System.out.println(recipeCapppuccino.coffee + "г. " + "кофе;");
+            System.out.println(recipeCapppuccino.milk + "мл. " + "молока." + "\n");
+        }
+
         public static void switchMachineOff(){
             MachineOff();
             setMenu(in.nextInt());
@@ -241,6 +252,8 @@ import java.util.Scanner;
                 case 1 -> switchMachineOff();
                 case 2 -> switchMachineContainers();
                 case 3 -> switchMachineMenu();
+                case 4 -> switchMachineOn();
+                case 5 -> switchMachineOn();
                 default -> {Error(); switchMachineOn();}
             }
         }
@@ -318,13 +331,16 @@ import java.util.Scanner;
                         }
                         switchNumberServings();
                     }
-
                     case 3 -> {
-                        System.out.print("Укажите нужное колличество напитков: ");
+                        System.out.print("Укажите нужное колличество напитка: ");
                         setNumMugs(in.nextInt());
                         for(int i = 1; i <= getNumMugs(); i++){
                             MakeEspresso();
                         }
+                        switchNumberServings();
+                    }
+                    case 4 -> {
+                        RecipeEspresso();
                         switchNumberServings();
                     }
                     default -> {
@@ -351,11 +367,15 @@ import java.util.Scanner;
                         switchNumberServings();
                     }
                     case 3 -> {
-                        System.out.print("Укажите нужное колличество напитков: ");
+                        System.out.print("Укажите нужное колличество напитка: ");
                         setNumMugs(in.nextInt());
                         for(int i = 1; i <= getNumMugs(); i++){
                             MakeCappuccino();
                         }
+                        switchNumberServings();
+                    }
+                    case 4 -> {
+                        RecipeCappuccino();
                         switchNumberServings();
                     }
                     default -> {
@@ -371,6 +391,5 @@ import java.util.Scanner;
         public static void main(String[] args) {
             switchMachineOff();
         }
-
     }
 
