@@ -10,6 +10,9 @@ import java.util.Scanner;
         private static Integer milk = 400; // остаток молока
         private static Integer clean = 10; // загрязнение
         private static Integer numMugs = 0; // колличество кружек кофе
+        private static Integer numCapppuccinoCoffee = 0; //колличество готового капучино;
+        private static Integer numEspressoCoffee = 0; //колличество готового экспрессо;
+
 
         // объекты для рецептов
         static CoffeeRecipe recipeEspresso = new CoffeeRecipe(100, 0, 10);
@@ -84,6 +87,8 @@ import java.util.Scanner;
         public static void accumulationClean(){
             CoffeeMachina.clean += 10;
         }
+        public static void accumulationMakeCapCoffee(){CoffeeMachina.numCapppuccinoCoffee += 1;}
+        public static void accumulationMakeEspCoffee(){CoffeeMachina.numEspressoCoffee += 1;}
 
 
         public enum Machine_OFF {
@@ -123,7 +128,6 @@ import java.util.Scanner;
         public static void Error_1(){
             System.out.println("**** Перелив ****");
         };
-
         public static void Error_2(){
             System.out.println("**** Лимит зерен превышен ****");
         };
@@ -142,6 +146,7 @@ import java.util.Scanner;
                     setCoffee(ostCoffee);
                     accumulationClean();
                     System.out.println("!!! Кофе готово !!!");
+                    accumulationMakeEspCoffee();
                 } else{
                     System.out.println("!!! ТРЕБУЕТСЯ ЧИСТКА !!!");
                 }
@@ -165,6 +170,7 @@ import java.util.Scanner;
                     setMilk(ostMilk);
                     accumulationClean();
                     System.out.println("!!! Кофе готово !!!");
+                    accumulationMakeCapCoffee();
                 } else{
                     System.out.println("!!! ТРЕБУЕТСЯ ЧИСТКА !!!");
                 }
@@ -222,6 +228,13 @@ import java.util.Scanner;
         }
 
         //методы
+        public static void History(){
+            System.out.println("!!! Приготовленные напитки !!!");
+            System.out.println("Капучино " + CoffeeMachina.numCapppuccinoCoffee + " шт");
+            System.out.println("Эспрессо " + CoffeeMachina.numEspressoCoffee + " шт" + "\n");
+            switchMachineOn();
+        }
+
 
         public static void RecipeEspresso(){
             System.out.println( "!!! Рецепт приготовления экспрессо !!!" );
@@ -253,7 +266,7 @@ import java.util.Scanner;
                 case 2 -> switchMachineContainers();
                 case 3 -> switchMachineMenu();
                 case 4 -> switchMachineOn();
-                case 5 -> switchMachineOn();
+                case 5 -> History();
                 default -> {Error(); switchMachineOn();}
             }
         }
