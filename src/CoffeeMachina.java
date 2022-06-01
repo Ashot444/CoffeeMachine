@@ -1,6 +1,9 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
     public class CoffeeMachina{
+        public static ArrayList<String> user = new ArrayList<>();
+        public static ArrayList<Integer> drink = new ArrayList<>();
         static Scanner in = new Scanner(System.in);
 
         private static Integer menu;
@@ -12,6 +15,7 @@ import java.util.Scanner;
         private static Integer numMugs = 0; // колличество кружек кофе
         private static Integer numCapppuccinoCoffee = 0; //колличество готового капучино;
         private static Integer numEspressoCoffee = 0; //колличество готового экспрессо;
+        private static String UserName; //имя пользователя
 
 
         // объекты для рецептов
@@ -26,6 +30,9 @@ import java.util.Scanner;
         {
             menu = n;
         }
+
+        public static void setUserName(String name){ user.add(name);}
+        public static void setDrink(Integer name){drink.add(name);}
 
         public static Integer getSelectionCoffee() {
             return selectionCoffee;
@@ -122,6 +129,11 @@ import java.util.Scanner;
             RECIPE
         }
 
+        public enum Users{
+            SELECT_USER,
+            ADD_USER
+        }
+
         public static void Error(){
             System.out.println("**** Ошибка операции ****");
         };
@@ -180,6 +192,30 @@ import java.util.Scanner;
             }
         }
 
+        public static void GetUser(){
+            for(int i = 1; i < user.size(); i++){
+                System.out.println(i + " - " + user.get(i));
+            }
+            System.out.println("Вы кто?");
+            setMenu(in.nextInt());
+            for(int i = 0; i < user.size(); i++){
+                if (user.indexOf(user.get(i)) == getMenu()) {
+                    if(drink.get(i) == 1){
+                        MakeEspresso();
+                    }else if(drink.get(i) == 2) {
+                        MakeCappuccino();
+                    }
+                }
+            }
+
+        }
+        public static void SetUser(){
+            System.out.print("Введите имя: ");
+            setUserName(in.next());
+            System.out.print("Выберите напиток: \n" + "Кнопка 1 - ESPRESSO \n" + "Кнопка 2 - CAPPUCCINO \n");
+            setDrink(in.nextInt());
+        }
+
 
         //Выводы меню
 
@@ -227,6 +263,14 @@ import java.util.Scanner;
             }
         }
 
+        public static void ActionsCrawlers(){
+            Integer i = 0;
+            System.out.println("Кнопка 0 - BACK");
+            for (Users actUser:Users.values()){
+                System.out.println( "Кнопка " + (++i) + " - " + actUser);
+            }
+        }
+
         //методы
         public static void History(){
             System.out.println("!!! Приготовленные напитки !!!");
@@ -265,7 +309,7 @@ import java.util.Scanner;
                 case 1 -> switchMachineOff();
                 case 2 -> switchMachineContainers();
                 case 3 -> switchMachineMenu();
-                case 4 -> switchMachineOn();
+                case 4 -> switchActionsCrawlers();
                 case 5 -> History();
                 default -> {Error(); switchMachineOn();}
             }
@@ -400,6 +444,26 @@ import java.util.Scanner;
 
             }
         }
+
+        public static void switchActionsCrawlers(){
+            ActionsCrawlers();
+            setMenu(in.nextInt());
+            switch (getMenu()){
+                case 0 -> {
+                    switchMachineOn();
+                }
+                case 1 -> {
+                    GetUser();
+                    switchActionsCrawlers();
+                }
+                case 2 -> {
+                    SetUser();
+                    switchActionsCrawlers();
+                }
+                default -> {Error(); switchMachineMenu();}
+            }
+        }
+
 
         public static void main(String[] args) {
             switchMachineOff();
