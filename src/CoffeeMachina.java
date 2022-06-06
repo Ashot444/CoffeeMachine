@@ -27,9 +27,14 @@ import java.util.Scanner;
             return menu;
         }
 
-        public static void setMenu(Integer n)
-        {
-            menu = n;
+        public static void setMenu(Integer n) { menu = n;}
+        public  static void checkMenu(String a){
+            try{
+                setMenu((Integer.valueOf(a)));
+            }catch (NumberFormatException k){
+                setMenu(0);
+                k.printStackTrace();
+            }
         }
 
         public static void setUserName(String name){ user.add(name);}
@@ -43,6 +48,15 @@ import java.util.Scanner;
         public static void setSelectionCoffee(Integer n)
         {
             selectionCoffee = n;
+        }
+
+        public static void checkSelectionCofee(String a){
+            try{
+                setSelectionCoffee((Integer.valueOf(a)));
+            }catch (NumberFormatException k){
+                setSelectionCoffee(0);
+                k.printStackTrace();
+            }
         }
 
         public static Integer getWater()
@@ -312,7 +326,7 @@ import java.util.Scanner;
 
         public static void switchMachineOff(){
             MachineOff();
-            setMenu(in.nextInt());
+            checkMenu(in.nextLine());
             switch (getMenu()){
                 case 1 -> switchMachineOn();
                 default -> {Error();switchMachineOff();}
@@ -321,7 +335,7 @@ import java.util.Scanner;
 
         public static void switchMachineOn(){
             MachineOn();
-            setMenu(in.nextInt());
+            checkMenu(in.nextLine());
             switch (getMenu()){
                 case 1 -> switchMachineOff();
                 case 2 -> switchMachineContainers();
@@ -334,7 +348,7 @@ import java.util.Scanner;
 
         public static void switchMachineContainers(){
             MachineContainers();
-            setMenu(in.nextInt());
+            checkMenu(in.nextLine());
             switch (getMenu()){
                 case 0 -> {
                     switchMachineOn();
@@ -370,7 +384,7 @@ import java.util.Scanner;
 
         public static void switchMachineMenu(){
             MachineMenu();
-            setSelectionCoffee(in.nextInt());
+            checkSelectionCofee(in.nextLine());
             switch (getSelectionCoffee()){
                 case 0 -> {
                     switchMachineOn();
@@ -390,7 +404,7 @@ import java.util.Scanner;
         public static void switchNumberServings() {
             if (getSelectionCoffee() == 1) {
                 NumberServings();
-                setMenu(in.nextInt());
+                checkMenu(in.nextLine());
                 switch (getMenu()) {
                     case 0 -> {
                         switchMachineMenu();
@@ -425,7 +439,7 @@ import java.util.Scanner;
             }
             else {
                 NumberServings();
-                setMenu(in.nextInt());
+                checkMenu(in.nextLine());
                 switch (getMenu()) {
                     case 0 -> {
                         switchMachineMenu();
@@ -464,7 +478,7 @@ import java.util.Scanner;
 
         public static void switchActionsCrawlers(){
             ActionsCrawlers();
-            setMenu(in.nextInt());
+            checkMenu(in.nextLine());
             switch (getMenu()){
                 case 0 -> {
                     switchMachineOn();
