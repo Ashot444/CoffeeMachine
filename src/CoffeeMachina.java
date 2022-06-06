@@ -326,7 +326,7 @@ import java.util.Scanner;
 
         public static void switchMachineOff(){
             MachineOff();
-            checkMenu(in.nextLine());
+            checkMenu(in.next());
             switch (getMenu()){
                 case 1 -> switchMachineOn();
                 default -> {Error();switchMachineOff();}
@@ -335,7 +335,7 @@ import java.util.Scanner;
 
         public static void switchMachineOn(){
             MachineOn();
-            checkMenu(in.nextLine());
+            checkMenu(in.next());
             switch (getMenu()){
                 case 1 -> switchMachineOff();
                 case 2 -> switchMachineContainers();
@@ -348,7 +348,7 @@ import java.util.Scanner;
 
         public static void switchMachineContainers(){
             MachineContainers();
-            checkMenu(in.nextLine());
+            checkMenu(in.next());
             switch (getMenu()){
                 case 0 -> {
                     switchMachineOn();
@@ -384,7 +384,7 @@ import java.util.Scanner;
 
         public static void switchMachineMenu(){
             MachineMenu();
-            checkSelectionCofee(in.nextLine());
+            checkSelectionCofee(in.next());
             switch (getSelectionCoffee()){
                 case 0 -> {
                     switchMachineOn();
@@ -404,7 +404,7 @@ import java.util.Scanner;
         public static void switchNumberServings() {
             if (getSelectionCoffee() == 1) {
                 NumberServings();
-                checkMenu(in.nextLine());
+                checkMenu(in.next());
                 switch (getMenu()) {
                     case 0 -> {
                         switchMachineMenu();
@@ -439,7 +439,7 @@ import java.util.Scanner;
             }
             else {
                 NumberServings();
-                checkMenu(in.nextLine());
+                checkMenu(in.next());
                 switch (getMenu()) {
                     case 0 -> {
                         switchMachineMenu();
@@ -478,7 +478,7 @@ import java.util.Scanner;
 
         public static void switchActionsCrawlers(){
             ActionsCrawlers();
-            checkMenu(in.nextLine());
+            checkMenu(in.next());
             switch (getMenu()){
                 case 0 -> {
                     switchMachineOn();
