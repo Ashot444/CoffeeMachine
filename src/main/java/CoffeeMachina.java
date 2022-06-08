@@ -1,6 +1,9 @@
+import lombok.extern.java.Log;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
+    @Log
     public class CoffeeMachina{
         public static ArrayList<String> user = new ArrayList<>();
         public static ArrayList<Integer> drink = new ArrayList<>();
@@ -32,6 +35,7 @@ import java.util.Scanner;
             try{
                 setMenu((Integer.valueOf(a)));
             }catch (NumberFormatException k){
+                log.warning("Неверное значение");
                 setMenu(0);
                 k.printStackTrace();
             }
@@ -54,6 +58,7 @@ import java.util.Scanner;
             try{
                 setSelectionCoffee((Integer.valueOf(a)));
             }catch (NumberFormatException k){
+                log.warning("Неверное значение");
                 setSelectionCoffee(0);
                 k.printStackTrace();
             }
@@ -151,13 +156,13 @@ import java.util.Scanner;
         }
 
         public static void Error(){
-            System.out.println("**** Ошибка операции ****");
+            log.warning("**** Ошибка операции ****");
         };
         public static void Error_1(){
-            System.out.println("**** Перелив ****");
+            log.warning("**** Перелив ****");
         };
         public static void Error_2(){
-            System.out.println("**** Лимит зерен превышен ****");
+            log.warning("**** Лимит зерен превышен ****");
         };
 
 
@@ -173,14 +178,14 @@ import java.util.Scanner;
                     setWater(ostWater);
                     setCoffee(ostCoffee);
                     accumulationClean();
-                    System.out.println("!!! Кофе готово !!!");
+                    log.info("!!! Кофе готово !!!");
                     accumulationMakeEspCoffee();
                 } else{
-                    System.out.println("!!! ТРЕБУЕТСЯ ЧИСТКА !!!");
+                    log.warning("!!! ТРЕБУЕТСЯ ЧИСТКА !!!");
                 }
             }
             else {
-                System.out.println("!!! НЕ ХВАТАЕТ ИНГРЕДИЕНТОВ !!!");
+                log.warning("!!! НЕ ХВАТАЕТ ИНГРЕДИЕНТОВ !!!");
             }
         }
 
@@ -197,14 +202,14 @@ import java.util.Scanner;
                     setCoffee(ostCoffee);
                     setMilk(ostMilk);
                     accumulationClean();
-                    System.out.println("!!! Кофе готово !!!");
+                    log.info("!!! Кофе готово !!!");
                     accumulationMakeCapCoffee();
                 } else{
-                    System.out.println("!!! ТРЕБУЕТСЯ ЧИСТКА !!!");
+                    log.warning("!!! ТРЕБУЕТСЯ ЧИСТКА !!!");
                 }
             }
             else {
-                System.out.println("!!! НЕ ХВАТАЕТ ИНГРЕДИЕНТОВ !!!");
+                log.warning("!!! НЕ ХВАТАЕТ ИНГРЕДИЕНТОВ !!!");
             }
         }
 
@@ -233,7 +238,7 @@ import java.util.Scanner;
                     }
                 }
             } else {
-                System.out.println("!!! Пользователи отсутствуют !!! \n");
+                log.info("!!! Пользователи отсутствуют !!! \n");
                 switchActionsCrawlers();
             }
 
@@ -325,6 +330,7 @@ import java.util.Scanner;
         }
 
         public static void switchMachineOff(){
+            log.info("Машина выключена");
             MachineOff();
             checkMenu(in.next());
             switch (getMenu()){
@@ -334,6 +340,7 @@ import java.util.Scanner;
         }
 
         public static void switchMachineOn(){
+            log.info("Машина включена");
             MachineOn();
             checkMenu(in.next());
             switch (getMenu()){
@@ -497,7 +504,9 @@ import java.util.Scanner;
 
 
         public static void main(String[] args) {
+            log.info("Запуск программы");
             switchMachineOff();
+
         }
     }
 
