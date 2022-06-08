@@ -245,11 +245,24 @@ import java.util.Scanner;
         }
         public static void SetUser(){
             System.out.print("Введите имя: ");
-            setUserName(in.next());
-            System.out.print("Выберите напиток: \n" + "Кнопка 1 - ESPRESSO \n" + "Кнопка 2 - CAPPUCCINO \n");
-            setDrink(in.nextInt());
-            System.out.print("Укажите колличество напитков: ");
-            setNumberDrink(in.nextInt());
+            var name = (in.next());
+            var coincidence = false;
+            for (int i = 0; i < user.size(); i++) {
+                if (name.equals(user.get(i))) {
+                    coincidence = true;
+                    break;
+                }
+            }
+
+            if (coincidence == false){
+                setUserName(name);
+                System.out.print("Выберите напиток: \n" + "Кнопка 1 - ESPRESSO \n" + "Кнопка 2 - CAPPUCCINO \n");
+                setDrink(in.nextInt());
+                System.out.print("Укажите колличество напитков: ");
+                setNumberDrink(in.nextInt());
+            } else {
+               log.warning("Пользователь с таким именем существует \n");
+            }
         }
 
 
@@ -330,7 +343,6 @@ import java.util.Scanner;
         }
 
         public static void switchMachineOff(){
-            log.info("Машина выключена");
             MachineOff();
             checkMenu(in.next());
             switch (getMenu()){
@@ -340,7 +352,6 @@ import java.util.Scanner;
         }
 
         public static void switchMachineOn(){
-            log.info("Машина включена");
             MachineOn();
             checkMenu(in.next());
             switch (getMenu()){
