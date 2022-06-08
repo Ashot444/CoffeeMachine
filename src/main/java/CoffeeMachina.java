@@ -374,20 +374,20 @@ import java.util.Scanner;
                 case 1 -> {
                     System.out.println("До полного необходимо добавить " + (400 - getWater()) +" мл");
                     System.out.println("Сколько " + CoffeeMachina.Machine_Container.WATER.name() +" добавить?");
-                    setWater(in.nextInt());
+                    setWater(Math.abs (in.nextInt()));
                     switchMachineContainers();
                 }
                 case 2 -> {
                     System.out.println("До полного необходимо добавить " + (400 - getCoffee()) +" г");
                     System.out.println("Сколько " + CoffeeMachina.Machine_Container.COFFEE.name() +" добавить?");
-                    setCoffee(in.nextInt());
+                    setCoffee(Math.abs (in.nextInt()));
                     switchMachineContainers();
                 }
 
                 case 3 -> {
                     System.out.println("До полного необходимо добавить " + (400 - getMilk()) +" мл");
                     System.out.println("Сколько " + CoffeeMachina.Machine_Container.MILK.name() +" добавить?");
-                    setMilk(in.nextInt());
+                    setMilk(Math.abs (in.nextInt()));
                     switchMachineContainers();
                 }
                 case 4 -> {
