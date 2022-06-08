@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Исправил добавление пользователей">
+    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Исключил отрицательные значения, с помощью Math.abs ()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CoffeeMachina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CoffeeMachina.java" afterDir="false" />
     </list>
@@ -95,7 +95,7 @@
       <workItem from="1654499911734" duration="6979000" />
       <workItem from="1654584624181" duration="1203000" />
       <workItem from="1654673236195" duration="721000" />
-      <workItem from="1654674092952" duration="9991000" />
+      <workItem from="1654674092952" duration="12288000" />
     </task>
     <task id="LOCAL-00001" summary="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)">
       <created>1653980955678</created>
@@ -174,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654682098144</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Исключил отрицательные значения, с помощью Math.abs ()">
+      <created>1654688815416</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654688815416</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +222,8 @@
     <MESSAGE value="Добавил Maven в проект" />
     <MESSAGE value="Реализовал логирование, подключил библиотеку Lombok" />
     <MESSAGE value="Исправил добавление пользователей" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил добавление пользователей" />
+    <MESSAGE value="Исключил отрицательные значения, с помощью Math.abs ()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исключил отрицательные значения, с помощью Math.abs ()" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

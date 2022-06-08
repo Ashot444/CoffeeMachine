@@ -1,15 +1,9 @@
 import lombok.extern.java.Log;
 
-import java.util.ArrayList;
 import java.util.Scanner;
-
     @Log
-    public class CoffeeMachina{
-        public static ArrayList<String> user = new ArrayList<>();
-        public static ArrayList<Integer> drink = new ArrayList<>();
-        public static ArrayList<Integer> numberDrink = new ArrayList<>();
+    public class CoffeeMachina {
         static Scanner in = new Scanner(System.in);
-
         private static Integer menu;
         private static Integer selectionCoffee; // селектор выбора кофе
         private static Integer water = 400; //остаток воды
@@ -25,6 +19,7 @@ import java.util.Scanner;
         // объекты для рецептов
         static CoffeeRecipe recipeEspresso = new CoffeeRecipe(100, 0, 10);
         static CoffeeRecipe recipeCapppuccino = new CoffeeRecipe(60, 40, 10);
+        static Profiles profiles = new Profiles();
 
         public static Integer getMenu() {
             return menu;
@@ -41,9 +36,9 @@ import java.util.Scanner;
             }
         }
 
-        public static void setUserName(String name){ user.add(name);}
-        public static void setDrink(Integer name){drink.add(name);}
-        public static void setNumberDrink (Integer in){numberDrink.add(in);}
+        public static void setUserName(String name){Profiles.user.add(name);}
+        public static void setDrink(Integer name){Profiles.drink.add(name);}
+        public static void setNumberDrink (Integer in){Profiles.numberDrink.add(in);}
 
         public static Integer getSelectionCoffee() {
             return selectionCoffee;
@@ -210,58 +205,6 @@ import java.util.Scanner;
             }
             else {
                 log.warning("!!! НЕ ХВАТАЕТ ИНГРЕДИЕНТОВ !!!");
-            }
-        }
-
-        public static void GetUser(){
-            if (user.size() != 0) {
-                for (int i = 0; i < user.size(); i++) {
-                    System.out.println(i + " - " + user.get(i));
-                }
-                System.out.println("Вы кто?");
-                setMenu(in.nextInt());
-                for (int i = 0; i < user.size(); i++) {
-                    if (user.indexOf(user.get(i)) == getMenu()) {
-                        if (drink.get(i) == 1) {
-                            int j = 0;
-                            while (j < numberDrink.get(i)) {
-                                MakeEspresso();
-                                j++;
-                            }
-                        } else if (drink.get(i) == 2) {
-                            int j = 0;
-                            while (j < numberDrink.get(i)) {
-                                MakeCappuccino();
-                                j++;
-                            }
-                        }
-                    }
-                }
-            } else {
-                log.info("!!! Пользователи отсутствуют !!! \n");
-                switchActionsCrawlers();
-            }
-
-        }
-        public static void SetUser(){
-            System.out.print("Введите имя: ");
-            var name = (in.next());
-            var coincidence = false;
-            for (int i = 0; i < user.size(); i++) {
-                if (name.equals(user.get(i))) {
-                    coincidence = true;
-                    break;
-                }
-            }
-
-            if (coincidence == false){
-                setUserName(name);
-                System.out.print("Выберите напиток: \n" + "Кнопка 1 - ESPRESSO \n" + "Кнопка 2 - CAPPUCCINO \n");
-                setDrink(in.nextInt());
-                System.out.print("Укажите колличество напитков: ");
-                setNumberDrink(in.nextInt());
-            } else {
-               log.warning("Пользователь с таким именем существует \n");
             }
         }
 
@@ -502,11 +445,11 @@ import java.util.Scanner;
                     switchMachineOn();
                 }
                 case 1 -> {
-                    GetUser();
+                    profiles.GetUser();
                     switchActionsCrawlers();
                 }
                 case 2 -> {
-                    SetUser();
+                    profiles.SetUser();
                     switchActionsCrawlers();
                 }
                 default -> {Error(); switchMachineMenu();}
@@ -517,7 +460,6 @@ import java.util.Scanner;
         public static void main(String[] args) {
             log.info("Запуск программы");
             switchMachineOff();
-
         }
     }
 
