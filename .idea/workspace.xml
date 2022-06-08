@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Реализовал исключения обрабатываемые путем прокидывания ошибки и обработки через конструкцию try, catсh">
+    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Правки по исключению">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeMachina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeMachina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeMachine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeMachine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CoffeeMachina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CoffeeMachina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CoffeeRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CoffeeRecipe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,17 +46,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.java" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="CoffeeMachina" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CoffeeMachina" />
@@ -64,6 +83,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="" />
@@ -77,7 +99,10 @@
       <workItem from="1654064345783" duration="17132000" />
       <workItem from="1654157079575" duration="533000" />
       <workItem from="1654267826428" duration="415000" />
-      <workItem from="1654499911734" duration="5664000" />
+      <workItem from="1654499911734" duration="6979000" />
+      <workItem from="1654584624181" duration="1203000" />
+      <workItem from="1654673236195" duration="721000" />
+      <workItem from="1654674092952" duration="1696000" />
     </task>
     <task id="LOCAL-00001" summary="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)">
       <created>1653980955678</created>
@@ -128,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654521042032</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Правки по исключению">
+      <created>1654523515142</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654523515142</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +197,11 @@
     <MESSAGE value="Готова часть добавления пользователей" />
     <MESSAGE value="Небольшие правки по добавлению пользователей" />
     <MESSAGE value="Реализовал исключения обрабатываемые путем прокидывания ошибки и обработки через конструкцию try, catсh" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовал исключения обрабатываемые путем прокидывания ошибки и обработки через конструкцию try, catсh" />
+    <MESSAGE value="Правки по исключению" />
+    <option name="LAST_COMMIT_MESSAGE" value="Правки по исключению" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
