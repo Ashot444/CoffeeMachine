@@ -2,9 +2,8 @@ import lombok.extern.java.Log;
 
 import java.util.Scanner;
     @Log
-    public class CoffeeMachina {
+    public class CoffeeMachina extends Menu{
         static Scanner in = new Scanner(System.in);
-        private static Integer menu;
         private static Integer selectionCoffee; // селектор выбора кофе
         private static Integer water = 400; //остаток воды
         private static Integer coffee = 400; // остаток кофе
@@ -21,20 +20,7 @@ import java.util.Scanner;
         static CoffeeRecipe recipeCapppuccino = new CoffeeRecipe(60, 40, 10);
         static Profiles profiles = new Profiles();
 
-        public static Integer getMenu() {
-            return menu;
-        }
 
-        public static void setMenu(Integer n) { menu = n;}
-        public  static void checkMenu(String a){
-            try{
-                setMenu((Integer.valueOf(a)));
-            }catch (NumberFormatException k){
-                log.warning("Неверное значение");
-                setMenu(0);
-                k.printStackTrace();
-            }
-        }
 
         public static void setUserName(String name){Profiles.user.add(name);}
         public static void setDrink(Integer name){Profiles.drink.add(name);}
