@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Создал отдельный класс для меню и применил наследование">
+    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Правки по добавлению и выбора пользователя, исправил некорректное наследование">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CoffeeMachina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CoffeeMachina.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
@@ -102,7 +102,7 @@
       <workItem from="1654674092952" duration="12288000" />
       <workItem from="1654759051075" duration="2079000" />
       <workItem from="1655186598659" duration="1829000" />
-      <workItem from="1655366670848" duration="12667000" />
+      <workItem from="1655366670848" duration="17801000" />
     </task>
     <task id="LOCAL-00001" summary="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)">
       <created>1653980955678</created>
@@ -195,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654699722761</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Внес правки по замечаниям">
+      <created>1655379642018</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1655379642018</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +245,9 @@
     <MESSAGE value="Исправил добавление пользователей" />
     <MESSAGE value="Исключил отрицательные значения, с помощью Math.abs ()" />
     <MESSAGE value="Создал отдельный класс для меню и применил наследование" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создал отдельный класс для меню и применил наследование" />
+    <MESSAGE value="Внес правки по замечаниям" />
+    <MESSAGE value="Правки по добавлению и выбора пользователя, исправил некорректное наследование" />
+    <option name="LAST_COMMIT_MESSAGE" value="Правки по добавлению и выбора пользователя, исправил некорректное наследование" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
