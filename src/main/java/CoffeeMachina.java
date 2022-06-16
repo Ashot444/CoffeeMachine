@@ -24,7 +24,32 @@ import java.util.Scanner;
 
         public static void setUserName(String name){Profiles.user.add(name);}
         public static void setDrink(Integer name){Profiles.drink.add(name);}
+
+        public static void checkSetDrink (String drink){
+            try{
+                String newString = drink.replace(" ", "");
+                setDrink((Integer.valueOf(newString)));
+            }catch (NumberFormatException k){
+                log.warning("Неверное значение");
+                setMenu(0);
+                k.printStackTrace();
+            }
+        }
         public static void setNumberDrink (Integer in){Profiles.numberDrink.add(in);}
+
+
+        public static void checkNumberDrink (String numberDrink){
+            try{
+                String newString =  numberDrink.replace(" ", "");
+                setNumberDrink((Integer.valueOf(newString)));
+
+            }catch (NumberFormatException k){
+                log.warning("Неверное значение");
+                setMenu(0);
+                k.printStackTrace();
+            }
+        }
+
 
         public static Integer getSelectionCoffee() {
             return selectionCoffee;
@@ -35,9 +60,11 @@ import java.util.Scanner;
             selectionCoffee = n;
         }
 
-        public static void checkSelectionCofee(String a){
+        public static void checkSelectionCoffee(String a){
             try{
-                setSelectionCoffee((Integer.valueOf(a)));
+                String b =  a.replace(" ", "");
+                setSelectionCoffee((Integer.valueOf(b)));
+
             }catch (NumberFormatException k){
                 log.warning("Неверное значение");
                 setSelectionCoffee(0);
@@ -50,9 +77,21 @@ import java.util.Scanner;
             return water;
         }
 
+
         public static void setWater(Integer water) {
-            if (CoffeeMachina.water + water > 400) Error_1();
-            else CoffeeMachina.water += water;
+                if (CoffeeMachina.water + water > 400) Error_1();
+                else CoffeeMachina.water += water;
+        }
+
+
+        public static void checkWater(String water){
+            try{
+                setWater((Integer.valueOf(water)));
+            }catch (NumberFormatException k){
+                log.warning("Неверное значение");
+                setMenu(0);
+                k.printStackTrace();
+            }
         }
 
         public static Integer getCoffee()
@@ -64,6 +103,16 @@ import java.util.Scanner;
             else CoffeeMachina.coffee += coffee;
         }
 
+        public static void checkCoffee(String coffee){
+            try{
+                setCoffee((Integer.valueOf(coffee)));
+            }catch (NumberFormatException k){
+                log.warning("Неверное значение");
+                setMenu(0);
+                k.printStackTrace();
+            }
+        }
+
         public static Integer getMilk()
         {
             return milk;
@@ -71,6 +120,16 @@ import java.util.Scanner;
         public static void setMilk(Integer milk) {
             if (CoffeeMachina.milk + milk > 400) Error_1();
             else CoffeeMachina.milk += milk;
+        }
+
+        public static void checkMilk(String milk){
+            try{
+                setMilk((Integer.valueOf(milk)));
+            }catch (NumberFormatException k){
+                log.warning("Неверное значение");
+                setMenu(0);
+                k.printStackTrace();
+            }
         }
 
 
@@ -83,6 +142,15 @@ import java.util.Scanner;
             else CoffeeMachina.clean = 0;
         }
 
+        public static void checkClean(String clean){
+            try{
+                setClean((Integer.valueOf(clean)));
+            }catch (NumberFormatException k){
+                log.warning("Неверное значение");
+                setMenu(0);
+                k.printStackTrace();
+            }
+        }
 
         public static void setNumMugs(Integer numMugs) {
             CoffeeMachina.numMugs = numMugs ;
@@ -92,6 +160,19 @@ import java.util.Scanner;
         {
             return numMugs;
         }
+
+        public static void checkNumMugs(String numMugs){
+            try{
+                setNumMugs((Integer.valueOf(numMugs)));
+            }catch (NumberFormatException k){
+                log.warning("Неверное значение");
+                setMenu(0);
+                k.printStackTrace();
+            }
+        }
+
+
+
 
         public static void accumulationClean(){
             CoffeeMachina.clean += 10;
@@ -273,7 +354,7 @@ import java.util.Scanner;
 
         public static void switchMachineOff(){
             MachineOff();
-            checkMenu(in.next());
+            checkMenu(in.nextLine());
             switch (getMenu()){
                 case 1 -> switchMachineOn();
                 default -> {Error();switchMachineOff();}
@@ -282,7 +363,7 @@ import java.util.Scanner;
 
         public static void switchMachineOn(){
             MachineOn();
-            checkMenu(in.next());
+            checkMenu(in.nextLine());
             switch (getMenu()){
                 case 1 -> switchMachineOff();
                 case 2 -> switchMachineContainers();
@@ -295,7 +376,7 @@ import java.util.Scanner;
 
         public static void switchMachineContainers(){
             MachineContainers();
-            checkMenu(in.next());
+            checkMenu(in.nextLine());
             switch (getMenu()){
                 case 0 -> {
                     switchMachineOn();
@@ -303,25 +384,25 @@ import java.util.Scanner;
                 case 1 -> {
                     System.out.println("До полного необходимо добавить " + (400 - getWater()) +" мл");
                     System.out.println("Сколько " + CoffeeMachina.Machine_Container.WATER.name() +" добавить?");
-                    setWater(Math.abs (in.nextInt()));
+                    checkWater(in.nextLine());
                     switchMachineContainers();
                 }
                 case 2 -> {
                     System.out.println("До полного необходимо добавить " + (400 - getCoffee()) +" г");
                     System.out.println("Сколько " + CoffeeMachina.Machine_Container.COFFEE.name() +" добавить?");
-                    setCoffee(Math.abs (in.nextInt()));
+                    checkCoffee(in.nextLine());
                     switchMachineContainers();
                 }
 
                 case 3 -> {
                     System.out.println("До полного необходимо добавить " + (400 - getMilk()) +" мл");
                     System.out.println("Сколько " + CoffeeMachina.Machine_Container.MILK.name() +" добавить?");
-                    setMilk(Math.abs (in.nextInt()));
+                    checkMilk(in.nextLine());
                     switchMachineContainers();
                 }
                 case 4 -> {
                     System.out.println("Кнопка 1 - " + CoffeeMachina.Machine_Container.CLEAN.name());
-                    setClean(in.nextInt());
+                    checkClean(in.nextLine());
                     switchMachineContainers();
                 }
 
@@ -331,7 +412,7 @@ import java.util.Scanner;
 
         public static void switchMachineMenu(){
             MachineMenu();
-            checkSelectionCofee(in.next());
+            checkSelectionCoffee(in.nextLine());
             switch (getSelectionCoffee()){
                 case 0 -> {
                     switchMachineOn();
@@ -351,7 +432,7 @@ import java.util.Scanner;
         public static void switchNumberServings() {
             if (getSelectionCoffee() == 1) {
                 NumberServings();
-                checkMenu(in.next());
+                checkMenu(in.nextLine());
                 switch (getMenu()) {
                     case 0 -> {
                         switchMachineMenu();
@@ -368,7 +449,7 @@ import java.util.Scanner;
                     }
                     case 3 -> {
                         System.out.print("Укажите нужное колличество напитка: ");
-                        setNumMugs(in.nextInt());
+                        checkNumMugs(in.nextLine());
                         for(int i = 1; i <= getNumMugs(); i++){
                             MakeEspresso();
                         }
@@ -386,7 +467,7 @@ import java.util.Scanner;
             }
             else {
                 NumberServings();
-                checkMenu(in.next());
+                checkMenu(in.nextLine());
                 switch (getMenu()) {
                     case 0 -> {
                         switchMachineMenu();
@@ -403,7 +484,7 @@ import java.util.Scanner;
                     }
                     case 3 -> {
                         System.out.print("Укажите нужное колличество напитка: ");
-                        setNumMugs(in.nextInt());
+                        checkNumMugs(in.nextLine());
                         for(int i = 1; i <= getNumMugs(); i++){
                             MakeCappuccino();
                         }
@@ -425,7 +506,7 @@ import java.util.Scanner;
 
         public static void switchActionsCrawlers(){
             ActionsCrawlers();
-            checkMenu(in.next());
+            checkMenu(in.nextLine());
             switch (getMenu()){
                 case 0 -> {
                     switchMachineOn();

@@ -11,7 +11,8 @@ public class Menu {
     public static void setMenu(Integer n) { menu = n;}
     public  static void checkMenu(String a){
         try{
-            setMenu((Integer.valueOf(a)));
+            String newString =  a.replace(" ", "");
+            setMenu((Integer.valueOf(newString)));
         }catch (NumberFormatException k){
             log.warning("Неверное значение");
             setMenu(0);

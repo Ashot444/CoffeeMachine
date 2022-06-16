@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Исключил отрицательные значения, с помощью Math.abs ()">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
+    <list default="true" id="98b99756-4b2f-403f-b84c-e6efcb4aebf2" name="Changes" comment="Создал отдельный класс для меню и применил наследование">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CoffeeMachina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CoffeeMachina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Profiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Profiles.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +48,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dunice/IdeaProjects/CoffeeMachine&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -97,6 +100,9 @@
       <workItem from="1654584624181" duration="1203000" />
       <workItem from="1654673236195" duration="721000" />
       <workItem from="1654674092952" duration="12288000" />
+      <workItem from="1654759051075" duration="2079000" />
+      <workItem from="1655186598659" duration="1829000" />
+      <workItem from="1655366670848" duration="12667000" />
     </task>
     <task id="LOCAL-00001" summary="Реализовал: интерфейс, вкл/выкл, добавление (воды, молока, кофе), защита от перелива, очистка машины, приготовление (Экспрессо и Капучино)">
       <created>1653980955678</created>
@@ -182,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654688815416</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Создал отдельный класс для меню и применил наследование">
+      <created>1654699722761</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654699722761</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +237,8 @@
     <MESSAGE value="Реализовал логирование, подключил библиотеку Lombok" />
     <MESSAGE value="Исправил добавление пользователей" />
     <MESSAGE value="Исключил отрицательные значения, с помощью Math.abs ()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исключил отрицательные значения, с помощью Math.abs ()" />
+    <MESSAGE value="Создал отдельный класс для меню и применил наследование" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создал отдельный класс для меню и применил наследование" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
